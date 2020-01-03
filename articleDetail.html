@@ -28,6 +28,15 @@
         <div class="moreBtn" @click="liked = !liked" :class="liked?'likedBtn':''"> {{liked?'已关注':'+ 关注'}} </div>
       </div>
       <div class="articleBg" :class="userFlex?'mar_60top':''">宝妈传，打造宝妈们的传说</div>
+      <div class="audioWrap">
+        <audio controls autoplay>
+          <source src="http://m8.music.126.net/20200103112049/58e8ca68637a9d630d7a1ce9386b38af/ymusic/0152/055a/5308/681ef6f50f20971ac5bddb07161fc6b5.mp3" type="audio/mpeg">
+          <embed height="50" width="100" src="http://m8.music.126.net/20200103112049/58e8ca68637a9d630d7a1ce9386b38af/ymusic/0152/055a/5308/681ef6f50f20971ac5bddb07161fc6b5.mp3">
+        </audio>
+      </div>
+      <!-- <div class="musicCon">
+        <img src="./images/music.png" >
+      </div> -->
       <div class="adImg">
         <img src="./images/5de89a24a5f9a.jpg" />
         <div class="toDetail">换成我的</div>
@@ -178,7 +187,8 @@
         liked: false,
         collectFlag: false,
         likedFlag2: false,
-        userFlex:false
+        userFlex:false,
+        mutedFlag:false//控制音频是否静音
       }
     },
     methods: {
