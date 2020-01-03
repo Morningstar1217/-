@@ -1,0 +1,114 @@
+html,
+body {
+  background-color: #f2f2f2;
+}
+
+.header {
+  padding: 10px 0;
+}
+
+.header .dataWrap {
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0;
+  width: 95%;
+  background-image: linear-gradient(
+    90deg,
+    #f47d2b 0%,
+    #f96330 36%,
+    #fd4835 100%
+  );
+  margin: 0 auto;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header .dataWrap .userImg {
+  margin-left: 20px;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.header .dataWrap .userInfo {
+  width: 65%;
+}
+
+.header .dataWrap .userInfo .userName {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header .dataWrap .userInfo .isVipWrap {
+  align-items: center;
+  margin-top: 5px;
+}
+
+.header .dataWrap .userInfo .isVipWrap a{
+  color: #fff;
+}
+
+.header .dataWrap .userInfo .isVipWrap .addAd {
+  width: 77px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 6px;
+  border: solid 1px #ffffff;
+  text-align: center;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.main .adWrap {
+  box-sizing: border-box;
+  width: 95%;
+  margin: 0 auto 10px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.main .adWrap .title {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.main .adWrap .title span {
+  color: #999;
+}
+
+.main .adWrap .adListWrap {
+  padding: 10px 0;
+}
+
+.main .adWrap .adListWrap .adList .adText {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  font-weight: 200;
+}
+
+.main .adWrap .adListWrap .adList .adImg {
+  margin: 0 auto;
+}
+
+.main .adWrap .adListWrap .adList .adImg img {
+  max-height: 200px;
+  width: 100%;
+}
+
+.main .adWrap .adListWrap .adList .adConsole {
+  flex-direction: row-reverse;
+  padding: 10px 0;
+}
+
+.main .adWrap .adListWrap .adList .adConsole div {
+  padding: 2px 5px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #7d7d7d;
+  margin-left: 15px;
+}

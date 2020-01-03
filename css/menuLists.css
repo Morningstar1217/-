@@ -1,0 +1,14 @@
+html,
+body {
+  background-color: #fcfcfc;
+}
+
+.menuWrap {
+  padding: 0 10px;
+}
+
+.menuWrap .menuList {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #f3f3f3;
+}

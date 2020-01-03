@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>营销数据</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/marketingData.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="dataWrap">
+          <div class="dataList">
+            <div>查看总数</div>
+            <div>4</div>
+          </div>
+          <div class="dataList">
+            <div>分享总次数</div>
+            <div>8</div>
+          </div>
+          <div class="dataList">
+            <div>阅读总时长</div>
+            <div>56441</div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="contentWrap">
+          <div class="top flex_row ">
+            <img src="./images/headImg.png" class="userImg" />
+            <div class="userInfo">
+              <div class="userName">胖墩</div>
+              <div class="date">上次登录时间:2019.12.8</div>
+            </div>
+            <div class="contactWrap">
+              <img src="./images/phone.png" class="phoneIcon" />
+              <img src="./images/ercode_red.png" class="ercodeIcon" @click="maskFlag = true" />
+            </div>
+          </div>
+          <div class="middle flex_row ">
+            <div class="numList">
+              <div class="num">7</div>
+              <div class="numTitle">阅读文章数</div>
+            </div>
+            <div class="line"></div>
+            <div class="numList">
+              <div class="num">1551</div>
+              <div class="numTitle">总阅读时长</div>
+            </div>
+            <div class="line"></div>
+            <div class="numList">
+              <div class="num">7</div>
+              <div class="numTitle">分享文章数</div>
+            </div>
+          </div>
+          <div class="bottom flex_row">
+            <div class="numBtn">
+              时长:454秒
+            </div>
+            <div class="numBtn">
+              次数:1次
+            </div>
+            <div class="numBtn">
+              分享:1次
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+      <div class="mask" v-if="maskFlag">
+        <div class="content">
+          <img src="./images/pangdun_ercode.png" class="ercode" />
+          <img src="./images/close_ed.png" class="close" @click="maskFlag = false" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          maskFlag: false
+        }
+      },
+      methods: {},
+      mounted() {}
+    })
+  </script>
+</html>

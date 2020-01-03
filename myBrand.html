@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宝妈传</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myBrand.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="searchWrap">
+          <input type="text" placeholder="请输入关键词搜索" class="searchInput" />
+          <img src="./images/search_iconBlack.png" class="searchIcon" />
+        </div>
+      </div>
+      <div class="main">
+        <div class="myBrand">
+          <div class="title">我的品牌</div>
+          <div class="myBrandWrap flex_row">
+            <div
+              class="myBrandList"
+              v-for="(item,index) in myBrandList"
+              :key="item.id"
+              @click="del(index)"
+            >
+              <span>{{item.title}}</span>
+              <img src="./images/close.png" />
+            </div>
+          </div>
+        </div>
+        <div class="myBrand">
+          <div class="title">热门品牌</div>
+          <div class="myBrandWrap flex_row">
+            <div
+              class="myBrandList hotBrandList"
+              v-for="(item,index) in hotBrandList"
+              :key="item.id"
+              @click="add(index)"
+            >
+              <span>{{item.title}}</span>
+            </div>
+          </div>
+        </div>
+        <a class="saveBtn" href="user.html">
+          完成
+        </a>
+        <div class="myBrand">
+          <div class="title">关于我的品牌</div>
+          <div class="aboutBrand">
+            选择或添加品牌后，系统关联了品牌的文章会自动出现在您的微站主页中的品牌文章页面里。省去大量自己寻找相关文章的时间，省时省力……
+          </div>
+          <div class="aboutBrand">
+            如果您的公司或团队需要加盟，请联系官方客服，会有专人帮您关联您的品牌文章，一人同步营销百人团队。你优秀=每个团队人都优秀……
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          myBrandList: [
+            {
+              title: '阿朵米'
+            },
+            {
+              title: 'ABC'
+            },
+            {
+              title: '优衣库'
+            },
+            {
+              title: '阿朵米'
+            }
+          ],
+          hotBrandList: [
+            {
+              title: '阿朵米'
+            },
+            {
+              title: 'ABC'
+            },
+            {
+              title: '优衣库'
+            },
+            {
+              title: '阿朵米'
+            },
+            {
+              title: '阿朵米'
+            },
+            {
+              title: 'ABC'
+            },
+            {
+              title: '优衣库'
+            },
+            {
+              title: '阿朵米'
+            }
+          ]
+        }
+      },
+      methods: {
+        del(index) {
+          this.myBrandList.splice(index, 1)
+        },
+        add(index) {
+          this.myBrandList.push(this.hotBrandList[index])
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

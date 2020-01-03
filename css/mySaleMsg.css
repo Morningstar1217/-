@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  background-color: #eee;
+}
+
+.msgWrap {
+  padding: 0 20px;
+}
+
+.msgWrap .msgList {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.msgWrap .msgList .msgDate {
+  width: 137px;
+  height: 19px;
+  line-height: 19px;
+  margin: 10px auto;
+  background-color: #c6c6c6;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.msgWrap .msgList .msgContent {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.msgWrap .msgList .msgContent .msgTitle {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.msgWrap .msgList .msgContent .msgText {
+  padding: 5px 0;
+  font-size: 11px;
+  color: #474646;
+}
+
+.msgWrap .msgList .msgContent .toWatch {
+  padding: 5px 0;
+  font-size: 13px;
+  color: #597fd5;
+}

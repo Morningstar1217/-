@@ -1,0 +1,505 @@
+.main {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px 10px 0;
+}
+
+.pad_50b {
+  padding-bottom: 50px !important;
+}
+
+.main .title {
+  height: 48px;
+  line-height: 24px;
+  overflow: hidden;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.main .userInfoWrap {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.main .userFixed {
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.main .userInfoWrap img {
+  width: 39px;
+  height: 39px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.main .userInfoWrap .userInfo {
+  width: 68%;
+  font-size: 14px;
+}
+
+.main .userInfoWrap .userInfo .telphone {
+  color: #afafaf;
+  font-size: 12px;
+}
+
+.main .userInfoWrap .userInfo .telphone div {
+  margin-right: 10px;
+}
+
+.main .userInfoWrap .moreBtn {
+  box-sizing: border-box;
+  width: 60px;
+  height: 23px;
+  line-height: 23px;
+  background-color: #fd4935;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.main .userInfoWrap .likedBtn {
+  color: #fd4935;
+  line-height: 21px;
+  background-color: #fff;
+  border: 1px solid #fd4935;
+}
+
+.main .articleBg {
+  width: 100%;
+  height: 35px;
+  margin: 0 auto;
+  line-height: 35px;
+  text-indent: 10px;
+  color: #fff;
+  font-size: 12px;
+  background-image: url('../images/articleBg.png');
+  background-size: cover;
+}
+
+.adImg {
+  position: relative;
+  width: 100%;
+  max-height: 170px;
+  margin: 10px auto 0;
+  overflow: hidden;
+}
+
+.adImg img {
+  width: 100%;
+  max-height: 170px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.adImg .toDetail {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 56px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  opacity: 0.5;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+}
+
+.adImg .slideMenu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  right: 10px;
+  bottom: 460px;
+  /* z-index: 80; */
+}
+
+.adImg .slideMenu img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.readNum {
+  font-size: 12px;
+  color: #a3a3a3;
+  padding: 8px 0;
+}
+
+.main .articleTextWrap {
+  position: relative;
+}
+
+.main .articleText {
+  width: 100%;
+  margin: 4px auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.main .articleTextNoAll {
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.main .articleTextWrap .readAll {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fd4835;
+}
+
+.userWrap {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+  background-color: rgb(255, 237, 234);
+  border-radius: 4px;
+}
+
+.userWrap .userImg {
+  position: absolute;
+  top: -27px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.userWrap .userName,
+.userWrap .company {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.userWrap .company {
+  color: #666;
+  font-size: 13px;
+}
+
+.userWrap .btnWrap {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.userWrap .btnWrap img {
+  width: 87px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.moreArticle {
+  padding: 10px;
+  background: #fff;
+}
+
+.moreArticle > .title {
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.moreArticle > .title > div {
+  align-items: center;
+}
+
+.moreArticle .title .titleHeader {
+  width: 3px;
+  height: 15px;
+  background-color: #fd4935;
+  margin-right: 8px;
+}
+
+.moreArticle .title .more {
+  font-size: 12px;
+  color: #999;
+}
+
+.moreArticle .articleWrap {
+  font-size: 15px;
+}
+
+.moreArticle .articleWrap .articleList {
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.moreArticle .articleWrap .articleList .left .title {
+  width: 240px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+
+.moreArticle .articleWrap .articleList .right img {
+  width: 90px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.consoleWrap {
+  padding: 10px 0;
+  align-items: center;
+  font-size: 13px;
+  justify-content: space-between;
+  color: #999;
+}
+
+.consoleWrap .consoleList {
+  margin-right: 20px;
+  padding: 3px 0;
+}
+
+.consoleWrap .consoleList span {
+  margin-left: 6px;
+}
+
+.consoleWrap .talks {
+  color: #fd4935;
+  border-bottom: 1px solid #fd4935;
+}
+
+.consoleWrap .consoleList:last-child {
+  margin: 0;
+}
+
+.consoleWrap .consoleList:nth-child(1) img {
+  width: 13px;
+  height: 8px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.consoleWrap .consoleList:nth-child(2) img {
+  width: 9px;
+  height: 10px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.consoleWrap .consoleList:nth-child(3) img {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.moreArticle .leaveMsgWrap .title {
+  padding: 0 10px;
+  align-self: center;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.moreArticle .leaveMsgWrap .title .titleLeft img {
+  width: 13px;
+  height: 12px;
+}
+
+.moreArticle .leaveMsgWrap .title .titleRight img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.moreArticle .leaveMsgWrap .title .titleRight img.noliked {
+  width: 17px;
+  height: 16px;
+}
+
+.moreArticle .leaveMsgWrap .title .titleRight img.liked {
+  width: 19px;
+  height: 18px;
+}
+
+.moreArticle .leaveMsgWrap .leaveMsg textarea {
+  display: block;
+  width: 98%;
+  height: 70px;
+  resize: none;
+  margin: 10px auto;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  outline: none;
+}
+
+.moreArticle .leaveMsgWrap .saveBtn {
+  width: 123px;
+  height: 30px;
+  line-height: 30px;
+  margin: 20px auto 10px;
+  background-color: #fd4835;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.talksWrap {
+  padding: 10px 0;
+}
+
+.talksWrap .talksList {
+  align-items: center;
+}
+
+.talksList .talksLeft {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.talksList .talksLeft img {
+  width: 40px;
+  height: 40px;
+  vertical-align: top;
+  margin-top: -15px;
+  border-radius: 50%;
+}
+
+.talksList .talkRight {
+  width: 300px;
+  margin-left: 10px;
+}
+
+.talkRight .talkUser {
+  font-size: 12px;
+  color: #51667b;
+}
+
+.talkRight .talkContent {
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.slideMenu2 {
+  position: fixed;
+  right: 10px;
+  bottom: 300px;
+}
+
+.slideMenu2 img.editArticle {
+  width: 80px;
+  vertical-align: middle;
+}
+
+.slideMenu img.slideWechat {
+  margin-top: 10px;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+.mask .content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 300px;
+  height: 300px;
+}
+
+.mask .content img.ercode {
+  width: 300px;
+  height: 300px;
+}
+
+.mask .close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+}
+
+.mask .shareContent {
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.mask .shareContent .title {
+  font-size: 26px;
+  padding: 10px 0 0;
+  font-weight: bold;
+}
+
+.mask .shareContent .shareText {
+  width: 66%;
+  padding: 20px 0;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #919191;
+}
+
+.mask .shareContent .btnWrap {
+  margin: 10px auto 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mask .shareContent .btnWrap .btnList {
+  width: 46%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.mask .shareContent .btnWrap .btnList:first-child {
+  background-color: #e5e5e5;
+  color: #393939;
+}
+
+.mask .shareContent .btnWrap .btnList:last-child {
+  background-color: #fd4835;
+  color: #fff;
+}
+
+.mask .shareContent .close {
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+}

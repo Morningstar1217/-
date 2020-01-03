@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宝妈传</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/message.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="menuWrap flex_row">
+          <a class="menuList" href="mySaleMsg.html">
+            <img src="./images/sale.png" style="width: 16px;height: 16px" />
+            <span>交易通知</span>
+          </a>
+          <a class="menuList" href="myLike.html">
+            <img src="./images/like_red.png" style="width: 15px;height:16px" />
+            <span>点赞通知</span>
+          </a>
+          <a class="menuList" href="myFens.html">
+            <img src="./images/fens.png" style="width: 16px;height: 15px" />
+            <span>粉丝通知</span>
+          </a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="messageWrap">
+          <div
+            class="messageList flex_row"
+            :class="touchIndex===index&&touchFlag?'touchLeft':''"
+            v-for="(item,index) in messageList"
+            @touchStart="touchStart(index,$event)"
+            @touchEnd="touchEnd(index,$event)"
+            @touchMove="touchMove(index,$event)"
+          >
+            <div class="imgWrap">
+              <img :src="item.userImg" />
+              <div class="messageNum">{{item.messageNum}}</div>
+            </div>
+            <div class="messageContent">
+              <div class="userName">{{item.userName}}</div>
+              <div class="content">{{item.content}}</div>
+            </div>
+            <div class="date">{{item.date}}</div>
+            <div class="delBtn" @click="del(index)">删除</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList selected" href="message.html">
+          <img src="./images/icon/message_ed.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList" href="user.html">
+          <img src="./images/icon/user.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          messageList: [
+            {
+              userImg: './images/demo1.png',
+              messageNum: 2,
+              userName: '胖墩',
+              content: '这是一条消息',
+              date: '23:59'
+            },
+            {
+              userImg: './images/demo1.png',
+              messageNum: 1,
+              userName: '胖墩',
+              content: '是一条消息',
+              date: '9:15'
+            },
+            {
+              userImg: './images/demo1.png',
+              messageNum: 4,
+              userName: '胖墩',
+              content: '一条消息',
+              date: '9:15'
+            },
+            {
+              userImg: './images/demo1.png',
+              messageNum: 2,
+              userName: '胖墩',
+              content: '条消息',
+              date: '9:15'
+            }
+          ],
+          touchStartNum: '',
+          touchIndex: '',
+          touchFlag: false
+        }
+      },
+      methods: {
+        touchStart(index, e) {
+          this.touchIndex === index ? '' : (this.touchFlag = false)
+          this.touchIndex = index
+          this.touchStartNum = e.targetTouches[0].clientX
+        },
+        touchEnd(index, e) {
+          let touchEnd = e.changedTouches[0].clientX
+        },
+        touchMove(index, e) {
+          if (this.touchStartNum - e.changedTouches[0].clientX >= 85) {
+            this.touchFlag = true
+          } else {
+            this.touchFlag = false
+          }
+        },
+        del(index) {
+          this.messageList.splice(index, 1)
+          this.touchFlag = false
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

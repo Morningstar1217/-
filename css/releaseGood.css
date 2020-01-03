@@ -1,0 +1,114 @@
+.header .btnWrap {
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.header .btnWrap .release {
+  width: 55px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  background-color: #fd4935;
+  border-radius: 13px;
+}
+
+.main .goodEditWrap {
+  padding: 10px;
+}
+
+.main .goodEditWrap .goodTitle input {
+  outline: none;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 16px;
+}
+
+.main .goodEditWrap .goodContent textarea {
+  font-size: 16px;
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  display: block;
+  outline: none;
+  resize: none;
+}
+
+.main .goodEditWrap .imgWrap {
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.main .goodEditWrap .imgWrap > div {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.main .goodEditWrap .imgWrap .imgList img {
+  width: 100px;
+  height: 100px;
+}
+
+.main .goodEditWrap .imgWrap div.uploadImg {
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.main .goodEditWrap .imgWrap div.uploadImg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 50px;
+  height: 50px;
+}
+
+.main .goodEditWrap .goodColumn {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  height: 50px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.main .goodEditWrap .goodColumn .left {
+  color: #464646;
+}
+
+.main .goodEditWrap .goodColumn .left img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.main .goodEditWrap .goodColumn .right {
+  font-size: 13px;
+  color: #999;
+}
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000;
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000;
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+}

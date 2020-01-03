@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  background-color: #eee;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.likeList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #fff;
+  margin-bottom: 4px;
+}
+
+.likeList .userImg {
+  overflow: hidden;
+}
+
+.likeList .userImg img {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.likeList .likeMiddle {
+  width: 62%;
+}
+
+.likeList .likeContent {
+  font-size: 14px;
+  color: #1d1d1d;
+}
+
+.likeList .likeDate {
+  font-size: 11px;
+  color: #474646;
+  margin-top: 5px;
+}
+
+.likeList .contentImgUrl {
+  overflow: hidden;
+}
+
+.likeList .contentImgUrl img {
+  width: 52px;
+  height: 52px;
+  vertical-align: middle;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>文章详情</title>
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/aircleDetail.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="main">
+      <div class="title">{{aircleDetail.title}}</div>
+      <div class="userInfoWrap flex_row" :class="userFlex?'userFixed':''">
+        <img src="./images/headImg.png" />
+        <div class="userInfo">
+          <div class="userName">胖墩</div>
+          <div class="telphone flex_row">
+            <div>文章<span>22</span></div>
+            <div>视频<span>34</span></div>
+            <div>商品<span>8</span></div>
+            <div>获赞<span>3422</span></div>
+          </div>
+        </div>
+        <div class="moreBtn" @click="liked = !liked" :class="liked?'likedBtn':''"> {{liked?'已关注':'+ 关注'}} </div>
+      </div>
+      <div class="articleBg" :class="userFlex?'mar_60top':''">宝妈传，打造宝妈们的传说</div>
+      <div class="adImg">
+        <img src="./images/5de89a24a5f9a.jpg" />
+        <div class="toDetail">换成我的</div>
+      </div>
+      <div class="articleTextWrap">
+        <div class="articleText" :class="readAll?'':'articleTextNoAll'" v-html="aircleDetail.detail">
+        </div>
+        <div class="readAll" v-if="!readAll" @click="readAll = true">阅读全文</div>
+      </div>
+      <div class="userWrap">
+        <img src="./images/headImg.png" class="userImg" />
+        <div class="userName">胖墩</div>
+        <div class="company">公司名称</div>
+        <div class="btnWrap flex_row">
+          <div class="telphone" @click="showShare">
+            <img src="./images/call.png" />
+          </div>
+          <div class="wechat" @click="showErcode">
+            <img src="./images/wechat.png" />
+          </div>
+        </div>
+      </div>
+      <div class="adImg">
+        <img src="./images/5de89a24a5f9a.jpg" />
+        <div class="toDetail">换成我的</div>
+        <div class="slideMenu">
+          <img src="./images/slideMore.png" class="slideMore" @click="showFlag = !showFlag" />
+          <img src="./images/slideWechat.png" class="slideWechat" @click="showErcode" />
+        </div>
+      </div>
+      <div class="readNum"><span>10000</span>阅读</div>
+    </div>
+    <div class="footer" v-if="showFlag">
+      <a class="navList" href="index.html">
+        <img src="./images/icon/index.png" class="navListIcon" />
+        <div class="navListText">首页</div>
+      </a>
+      <a class="navList" href="vedio.html">
+        <img src="./images/icon/video.png" class="navListIcon" />
+        <div class="navListText">视频</div>
+      </a>
+      <a class="navList" href="circle.html">
+        <img src="./images/icon/circle.png" class="navListIcon" />
+        <div class="navListText">圈子</div>
+      </a>
+      <a class="navList" href="message.html">
+        <img src="./images/icon/message.png" class="navListIcon" />
+        <div class="navListText">消息</div>
+      </a>
+      <a class="navList selected" href="user.html">
+        <img src="./images/icon/user_ed.png" class="navListIcon" />
+        <div class="navListText">我的</div>
+      </a>
+    </div>
+    <div class="hr"></div>
+    <div class="moreArticle" :class="showFlag?'pad_50b':''">
+      <div class="title flex_row">
+        <div class="flex_row">
+          <div class="titleHeader"></div>
+          <div class="titleText">相关阅读</div>
+        </div>
+        <div class="more">更多</div>
+      </div>
+      <div class="articleWrap">
+        <div class="articleList flex_row">
+          <div class="left">
+            <div class="title">惯子如害子，九大惯子特征，家长必看</div>
+          </div>
+        </div>
+        <div class="consoleWrap flex_row">
+          <div class="flex_row">
+            <div class="consoleList talks"> 评论<span>154</span>
+            </div>
+            <div class="consoleList"> 转发<span>154</span>
+            </div>
+          </div>
+          <div class="consoleList"> 赞<span>154</span>
+          </div>
+        </div>
+        <div class="talksWrap">
+          <div class="talksList flex_row">
+            <div class="talksLeft">
+              <img src="./images/demo1.png">
+            </div>
+            <div class="talkRight">
+              <div class="talkUser"> 用户1232132132132132 </div>
+              <div class="talkContent"> "宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="leaveMsgWrap">
+        <div class="title flex_row">
+          <div class="titleLeft">
+            <img src="./images/edit2.png">
+            <span>写评论...</span>
+          </div>
+          <div class="titleRight">
+            <img :src="collectFlag?'./images/collect_yellow.png':'./images/collect_black.png'"
+              :class="collectFlag?'liked':'noliked'" @click="collectFlag = !collectFlag">
+            <img :src="likedFlag2?'./images/like_red2.png':'./images/like_black.png'"
+              style="width:19px;height:17px;margin-top: -2px;" @click="likedFlag2 = !likedFlag2">
+          </div>
+        </div>
+        <div class="leaveMsg">
+          <textarea></textarea>
+        </div>
+        <div class="saveBtn">提交保存</div>
+      </div>
+    </div>
+    <div class="slideMenu2">
+      <img src="./images/editArticle.png" class="editArticle" />
+    </div>
+    <div class="mask" v-if="maskFlag">
+      <div class="content" v-if="ercodeFlag">
+        <img src="./images/pangdun_ercode.png" class="ercode" />
+        <img src="./images/close_ed.png" class="close" @click="closeErcode" />
+      </div>
+      <div class="shareContent" v-if="shareFlag">
+        <div class="title"> 开启谁看了我功能 </div>
+        <div class="shareText"> 开启后，有客户点击了</br>你的文章/视频/商品内容,</br>系统即会发起提示哦。 </div>
+        <div class="btnWrap flex_row">
+          <div class="btnList">查看详情</div>
+          <div class="btnList">确认开启</div>
+        </div>
+        <img src="./images/close_gray.png" class="close" @click="closeShare" />
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        aircleDetail: {
+          desc: '爸妈忙“血拼”',
+          title: '爸妈忙“血拼”，1岁半女儿因它丢了性命！1岁半女儿因它丢了性命！',
+          detail:
+            '<h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><h2>测试html</h2><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p><p>"宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说宝妈转，打造宝妈们的传说。</p>'
+        },
+        showFlag: false,
+        maskFlag: false,
+        ercodeFlag: false,
+        shareFlag: false,
+        readAll: false,
+        liked: false,
+        collectFlag: false,
+        likedFlag2: false,
+        userFlex:false
+      }
+    },
+    methods: {
+      showErcode() {
+        this.maskFlag = true
+        this.ercodeFlag = true
+      },
+      closeErcode() {
+        this.maskFlag = false
+        this.ercodeFlag = false
+      },
+      showShare() {
+        this.maskFlag = true
+        this.shareFlag = true
+      },
+      closeShare() {
+        this.maskFlag = false
+        this.shareFlag = false
+      },
+      handleScroll() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        var offsetTop = document.querySelector('.main').offsetTop;
+        if(scrollTop>=60){
+          this.userFlex = true
+        }else{
+          this.userFlex = false
+        }
+      }
+    },
+    mounted() {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宝妈传</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="searchWrap">
+          <input type="text" placeholder="请输入关键词搜索" class="searchInput" />
+          <img src="./images/search_icon.png" class="searchIcon" />
+        </div>
+        <div class="menuBigWrap">
+          <div class="menuWrap" ref="menuWrap">
+            <ul class="content" ref="content">
+              <li
+                v-for="(item,index) in menuList"
+                @click="changeMenu(index)"
+                :class="selectedIndex===index?'selected':''"
+              >
+                {{item.title}}
+              </li>
+            </ul>
+          </div>
+          <div class="menuIconWrap" @click="maskFlag = true">
+            <img src="./images/more.png" class="menuIcon" />
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <img src="./images/壁纸8.jpg" class="swiper-slide" />
+            <img src="./images/壁纸5.jpg" class="swiper-slide" />
+            <img src="./images/5de89a24a5f9a.jpg" class="swiper-slide" />
+          </div>
+        </div>
+        <div class="mainMenuWrap">
+          <div class="menuList" v-for="(item,index) in menuList2">
+            <img :src="item.imgUrl" />
+            <div>{{item.title}}</div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="articleWrap">
+          <div
+            class="articleList"
+            v-for="(item,index) in articleList"
+            @touchStart.stop="touchStart(index,$event,1)"
+            @touchEnd="touchEnd(index,$event,1)"
+            @touchMove="touchMove(index,$event,1)"
+          >
+            <a class="left" href="articleDetail.html">
+              <div class="title">{{item.title}}</div>
+              <div class="leftBottom">
+                <span class="isTop">{{item.isTop?'置顶':''}}</span>
+                <span class="tag">{{item.tag}}</span>
+                <span class="commentNum">{{item.commentNum}}万评论</span>
+                <span class="date">{{item.date}}</span>
+              </div>
+            </a>
+            <div class="right">
+              <img :src="item.imgUrl" />
+            </div>
+            <div class="articleMenu" :class="showIndex1 ===index&&showFlag1?'show':''">
+              <div class="top">
+                点击品牌名，将文章入品牌库
+              </div>
+              <div class="middle flex_row">
+                <div
+                  class="brandList"
+                  :class="brandIndex===index?'selected':''"
+                  v-for="(item,index) in menuList"
+                  :key="index"
+                  @click.stop="changeBrand(index)"
+                >
+                  {{item.title}}
+                </div>
+              </div>
+              <div class="bottom">
+                入库后的文章即会同步显视到您的个人微站
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="adImg">
+          <img src="./images/壁纸9.jpg" />
+          <div class="toDetail">查看详情</div>
+        </div>
+        <div
+          v-infinite-scroll="loadMore"
+          infinite-scroll-disabled="busy"
+          infinite-scroll-distance="10"
+        >
+          <div class="articleWrap">
+            <div
+              class="articleList"
+              v-for="(item,index) in articleList2"
+              @touchStart.stop="touchStart(index,$event)"
+              @touchEnd="touchEnd(index,$event)"
+              @touchMove="touchMove(index,$event)"
+            >
+              <div class="left">
+                <div class="title">{{item.title}}</div>
+                <div class="leftBottom">
+                  <span class="isTop">{{item.isTop?'置顶':''}}</span>
+                  <span class="tag">{{item.tag}}</span>
+                  <span class="commentNum">{{item.commentNum}}万评论</span>
+                  <span class="date">{{item.date}}</span>
+                </div>
+              </div>
+              <div class="right">
+                <img :src="item.imgUrl" />
+              </div>
+              <div class="articleMenu" :class="showIndex ===index&&showFlag?'show':''">
+                <div class="top">
+                  点击品牌名，将文章入品牌库
+                </div>
+                <div class="middle flex_row">
+                  <div
+                    class="brandList"
+                    :class="brandIndex===index?'selected':''"
+                    v-for="(item,index) in myBrand"
+                    :key="index"
+                    @click.stop="changeBrand(index)"
+                  >
+                    {{item.title}}
+                  </div>
+                </div>
+                <div class="bottom">
+                  入库后的文章即会同步显视到您的个人微站
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList selected" href="index.html">
+          <img src="./images/icon/index_ed.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList" href="user.html">
+          <img src="./images/icon/user.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+      <div class="maskWrap" v-if="maskFlag">
+        <div class="maskMenuWrap">
+          <div class="close" @click="maskFlag = false">
+            <img src="./images/close.png" />
+          </div>
+          <div class="myMenu">
+            <div class="title flex_row">
+              <div class="titleText">我的分类<span>点击进入分类</span></div>
+              <div class="editMenu" @click="delFlag = !delFlag">
+                {{delFlag?'完成':'编辑'}}
+              </div>
+            </div>
+            <div class="myMenuWrap flex_row">
+              <div class="myMenuList" v-for="(item,index) in menuList">
+                {{item.title}}
+                <img src="./images/del.png" class="delImg" v-if="delFlag" @click="delMenu(index)" />
+              </div>
+            </div>
+          </div>
+          <div class="myMenu">
+            <div class="title flex_row">
+              <div class="titleText">更多分类<span>点击添加分类</span></div>
+            </div>
+            <div class="myMenuWrap flex_row">
+              <div class="myMenuList" @click="addMenu(index)" v-for="(item,index) in myMenuList">
+                + {{item.title}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+  <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          menuList: [
+            {
+              id: 0,
+              title: '全部'
+            },
+            {
+              id: 1,
+              title: '经验之谈'
+            },
+            {
+              id: 2,
+              title: '创业故事'
+            },
+            {
+              id: 3,
+              title: '采访专栏'
+            },
+            {
+              id: 4,
+              title: '家庭情感'
+            },
+            {
+              id: 5,
+              title: '经验之谈'
+            }
+          ],
+          menuList2: [
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            },
+            {
+              id: 0,
+              imgUrl: './images/icon/circle_ed.png',
+              title: '最新资讯'
+            }
+          ],
+          articleList: [
+            {
+              id: 0,
+              title: '惯子如害子，九大长必看',
+              tag: '女性',
+              date: '刚刚',
+              imgUrl: './images/5de89a24a5f9a.jpg',
+              commentNum: 29.8,
+              isTop: true
+            },
+            {
+              id: 1,
+              title: '惯子如害子，九大惯子特征，家长必看',
+              tag: '育儿',
+              date: '2019-12-07',
+              imgUrl: './images/5de89a24a5f9a.jpg',
+              commentNum: 29.8,
+              isTop: true
+            }
+          ],
+          articleList2: [
+            {
+              id: 0,
+              title: '惯子如害子，九大惯子特征，家长必看',
+              tag: '女性',
+              date: '刚刚',
+              imgUrl: './images/5de89a24a5f9a.jpg',
+              commentNum: 29.8,
+              isTop: true
+            },
+            {
+              id: 1,
+              title: '惯子如害子，九大惯子特征，家长必看',
+              tag: '育儿',
+              date: '2019-12-07',
+              imgUrl: './images/5de89a24a5f9a.jpg',
+              commentNum: 29.8,
+              isTop: true
+            }
+          ],
+          selectedIndex: 0,
+          myMenuList: [
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            }
+          ],
+          myseMenuList: [
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            },
+            {
+              title: '女性'
+            }
+          ],
+          delFlag: false,
+          maskFlag: false,
+          showIndex: false,
+          showFlag: false,
+          showIndex1: false,
+          showFlag1: false,
+          myBrand: [
+            {
+              title: '阿咪多'
+            },
+            {
+              title: '阿咪多'
+            },
+            {
+              title: '阿咪多'
+            }
+          ],
+          brandIndex: ''
+        }
+      },
+      methods: {
+        loadMore: function() {
+          this.busy = true
+          setTimeout(() => {
+            for (var i = 0, j = 10; i < j; i++) {
+              this.articleList2.push({
+                id: 0,
+                title: '惯子如害子，九大惯子特征，家长必看',
+                tag: '女性',
+                date: '刚刚',
+                imgUrl: './images/5de89a24a5f9a.jpg',
+                commentNum: 29.8,
+                isTop: true
+              })
+            }
+            this.busy = false
+          }, 1000)
+        },
+        initPics() {
+          let itemWidth = 60 // 这里是设置列表每一项的宽度
+          let margin = 10
+          // width是整个列表的宽度
+          let width = (itemWidth + margin) * this.menuList.length - margin
+          this.$refs.content.style.width = width + 'px' // 设置.list的宽度的宽度
+          this.$nextTick(() => {
+            if (!this.picScroll) {
+              this.picScroll = new BScroll(this.$refs.menuWrap, {
+                scrollX: true,
+                eventPassthrough: 'vertical' // 忽略竖直方向的滚动
+              })
+            } else {
+              this.picScroll.refresh()
+            }
+          })
+        },
+        changeMenu(index) {
+          this.selectedIndex = index
+        },
+        touchStart(index, e, no) {
+          if (no === 1) {
+            this.showIndex1 === index ? '' : (this.showFlag1 = false)
+            this.showIndex1 = index
+            this.touchStartNum = e.targetTouches[0].clientX
+          } else {
+            this.showIndex === index ? '' : (this.showFlag = false)
+            this.showIndex = index
+            this.touchStartNum = e.targetTouches[0].clientX
+          }
+        },
+        touchEnd(index, e, no) {
+          let touchEnd = e.changedTouches[0].clientX
+        },
+        touchMove(index, e, no) {
+          if (no === 1) {
+            if (this.touchStartNum - e.changedTouches[0].clientX >= 100) {
+              this.showFlag1 = true
+            } else {
+              this.showFlag1 = false
+            }
+          } else {
+            if (this.touchStartNum - e.changedTouches[0].clientX >= 100) {
+              this.showFlag = true
+            } else {
+              this.showFlag = false
+            }
+          }
+        },
+        changeBrand(index) {
+          this.brandIndex = index
+        },
+        addMenu(index) {
+          if (this.delFlag) {
+            this.menuList.push(this.myMenuList[index])
+          }
+          this.initPics()
+        },
+        delMenu(index) {
+          this.menuList.splice(index, 1)
+        }
+      },
+      mounted() {
+        this.$nextTick(() => {
+          this.initPics()
+        })
+        new Swiper('.swiper-container', {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          autoplay: true,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        })
+      }
+    })
+  </script>
+</html>

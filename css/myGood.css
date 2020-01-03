@@ -1,0 +1,65 @@
+html,
+body {
+  background-color: #f2f2f2;
+}
+
+.main .goodWrap {
+  padding: 10px 10px;
+}
+
+.main .goodWrap .goodList {
+  color: #000;
+  display: block;
+  padding: 10px 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.main .goodWrap .goodList .goodInfo {
+  justify-content: space-between;
+}
+
+.main .goodWrap .goodList .goodInfo .goodImg {
+  width: 68px;
+  height: 68px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap {
+  width: 75%;
+  font-size: 13px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .goodName {
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .price {
+  color: #fd4835;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .watchNum {
+  color: #999;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.main .goodWrap .goodList .goodConsole {
+  height: 40px;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-size: 12px;
+}
+
+.main .goodWrap .goodList .goodConsole div {
+  padding: 0 5px;
+  border: 1px solid #898989;
+  margin-left: 15px;
+}

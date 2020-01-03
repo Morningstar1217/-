@@ -1,0 +1,355 @@
+.header {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 186px;
+  padding: 10px 20px;
+  z-index: 10;
+  color: #fff;
+  background-image: url('https://images.pexels.com/photos/1213447/pexels-photo-1213447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+}
+
+.filterWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(5px);
+  background-image: url('https://images.pexels.com/photos/1213447/pexels-photo-1213447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover; */
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.header .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 15px;
+}
+
+.header .top .userImg {
+  width: 63px;
+  height: 63px;
+  border: 3px solid #ffffff99;
+  border-radius: 50%;
+}
+
+.header .top .userInfo {
+  position: relative;
+  width: 75%;
+}
+
+.header .top .userInfo .telphone,
+.header .top .userInfo .city {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.header .top .userInfo .watch,
+.header .top .userInfo .ercode {
+  position: absolute;
+  right: 10px;
+}
+
+.header .top .userInfo .watch {
+  top: 0;
+  width: 59px;
+  height: 24px;
+  line-height: 24px;
+  background-color: #fd4835;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.header .top .userInfo .ercode {
+  top: 55px;
+  width: 13px;
+  height: 13px;
+}
+
+.header .middle {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.header .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.main .menuWrap {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.menuWrap .menuList.selected {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  height: 45px;
+  line-height: 45px;
+}
+
+.menuWrap .menuList.selected::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 3px;
+  background-color: #fd4835;
+  border-radius: 2px;
+}
+
+.menuContentWrap {
+  padding: 0 10px;
+}
+
+.menuContentWrap .menuContentList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.menuContentWrap .menuContentList .left .title {
+  width: 90%;
+  font-size: 14px;
+  height: 40px;
+  line-height: 20px;
+}
+
+.menuContentWrap .menuContentList .left .title .joinStock {
+  /* width: 33px; */
+  display: inline-block;
+  height: 15px;
+  line-height: 15px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: solid 1px #fd4835;
+  margin-left: 10px;
+  color: #fd4835;
+  padding: 0 4px;
+  transform: scale(.8);
+}
+
+.menuContentWrap .menuContentList .right img {
+  width: 109px;
+  height: 65px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.menuContentList .dataWrap {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #00000080;
+}
+
+.menuContentList .dataWrap img {
+  width: 13px;
+  height: 8px;
+  margin-left: 15px;
+}
+
+.menuContentList .dataWrap img.likeIcon {
+  width: 9px;
+  height: 10px;
+}
+
+.main .goodWrap,
+.main .vedioWrap {
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: wrap;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.main .goodWrap .goodList,
+.main .vedioWrap .vedioList {
+  width: 49%;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.main .goodWrap .goodList img,
+.main .vedioWrap .vedioList > img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.main .goodWrap .goodList .goodTitle {
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.main .goodWrap .goodList .price {
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  overflow: hidden;
+  color: #fd4835;
+}
+
+.main .dynamicWrap {
+  padding: 10px 0 10px 10px;
+}
+
+.main .dynamicWrap .dynamicList {
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.main .dynamicWrap .left {
+  width: 25%;
+  font-weight: bold;
+}
+
+.main .dynamicWrap .left .dynamicDate {
+  height: 30px;
+  line-height: 30px;
+}
+
+.main .dynamicWrap .left .dynamicDate span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.main .dynamicWrap .right {
+  width: 75%;
+}
+
+.main .dynamicWrap .right .title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+}
+
+.main .dynamicWrap .right .dynamicInfo {
+  background-color: #f1f1f1;
+  justify-content: space-between;
+}
+
+.main .dynamicWrap .right .dynamicInfo img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+}
+
+.main .dynamicWrap .right .dynamicInfo .goodInfo {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
+  padding: 5px 0;
+  margin-left: 10px;
+}
+
+.main .dynamicWrap .right .dynamicInfo .goodInfo .goodName {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 20px;
+  max-width: 200px;
+  height: 44px;
+  font-size: 14px;
+  line-height: 22px;
+  overflow: hidden;
+}
+
+.main .dynamicWrap .right .dynamicInfo .goodInfo .price {
+  font-size: 15px;
+  color: #fd4835;
+}
+
+.main .dynamicWrap .right .talkWrap {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px 0 0 5px;
+}
+
+.main .dynamicWrap .right .talkWrap .talkContent {
+  font-size: 18px;
+}
+
+.main .dynamicWrap .right .talkWrap .desc {
+  font-size: 12px;
+  color: #414040;
+}
+
+.main .vedioWrap .vedioList {
+  position: relative;
+  overflow: hidden;
+}
+
+.main .vedioWrap .vedioList .loveNum {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.main .vedioWrap .vedioList .loveNum img {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.mask .content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 300px;
+  height: 300px;
+}
+
+.mask .content img.ercode {
+  width: 300px;
+  height: 300px;
+}
+
+.mask .close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+}

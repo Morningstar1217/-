@@ -1,0 +1,109 @@
+html,
+body {
+  background-color: #f2f2f2;
+}
+
+.main .goodWrap {
+  padding: 10px 10px;
+}
+
+.main .goodWrap .goodList {
+  padding: 10px 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.main .goodWrap .goodList .goodDateWrap {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.main .goodWrap .goodList .goodInfo {
+  padding: 10px 0;
+  justify-content: space-between;
+}
+
+.main .goodWrap .goodList .goodInfo .goodImg {
+  width: 68px;
+  height: 68px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap {
+  width: 75%;
+  font-size: 13px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .goodName {
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .price {
+  color: #fd4835;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .watchNum {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.main .goodWrap .goodList .goodInfo .goodInfoWrap .watchNum img {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.main .goodWrap .goodList .goodConsole {
+  height: 40px;
+  align-items: center;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.main .goodWrap .goodList .goodConsole .contactShop {
+  font-size: 12px;
+  color: #fd4935;
+}
+
+.main .goodWrap .goodList .goodConsole .contactShop img {
+  width: 16px;
+  height: 15px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.main .goodWrap .goodList .goodConsole .btnWrap {
+  align-items: center;
+}
+
+.main .goodWrap .goodList .goodConsole .btnWrap .toDetail {
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fd4935;
+  border: solid 1px #fd4935;
+  border-radius: 12px;
+}
+
+.main .goodWrap .goodList .goodConsole .btnWrap .toLogistics,
+.main .goodWrap .goodList .goodConsole .btnWrap .toEvaluation {
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #595959;
+  border: solid 1px #c7c7c7;
+  border-radius: 12px;
+  margin-right: 10px;
+}

@@ -1,0 +1,148 @@
+html,
+body {
+  background-color: #f2f2f2;
+}
+
+.header {
+  padding: 10px 0;
+}
+
+.header .dataWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0;
+  width: 95%;
+  background-image: linear-gradient(90deg, #f47d2b 0%, #f96330 36%, #fd4835 100%);
+  margin: 0 auto;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header .dataList {
+  text-align: center;
+}
+
+.header .dataList div:first-child {
+  margin-bottom: 10px;
+}
+
+.main .contentWrap {
+  box-sizing: border-box;
+  width: 95%;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.main .contentWrap .top {
+  padding: 5px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentWrap .top .userImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.contentWrap .top .userInfo {
+  width: 65%;
+  font-size: 12px;
+}
+
+.contentWrap .top .userInfo .userName {
+  font-weight: bold;
+}
+
+.contentWrap .top .userInfo .date {
+  color: #5b5959;
+}
+
+.contentWrap .top .contactWrap .phoneIcon {
+  width: 11px;
+  height: 13px;
+}
+
+.contentWrap .top .contactWrap .ercodeIcon {
+  margin-left: 10px;
+  width: 13px;
+  height: 13px;
+}
+
+.contentWrap .middle {
+  justify-content: space-between;
+  margin: 10px auto;
+  font-size: 12px;
+}
+
+.contentWrap .middle .numList {
+  text-align: center;
+}
+
+.contentWrap .middle .line {
+  width: 1px;
+  height: 17px;
+  background-color: #000000;
+  opacity: 0.2;
+}
+
+.contentWrap .middle .numList .num {
+  text-align: center;
+  font-size: 14px;
+  color: #fd4835;
+  margin-bottom: 6px;
+}
+
+.contentWrap .bottom {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentWrap .bottom .numBtn {
+  width: 94px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 11px;
+  border: solid 1px #fc4a35;
+  color: #fc4a35;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.mask .content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 300px;
+  height: 300px;
+}
+
+.mask .content img.ercode {
+  width: 300px;
+  height: 300px;
+}
+
+.mask .close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+}

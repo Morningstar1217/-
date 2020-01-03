@@ -1,0 +1,362 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fd4835;
+  z-index: 80;
+}
+
+.header .searchWrap {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.searchWrap .searchInput {
+  width: 92%;
+  height: 26px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.14);
+  border-radius: 13px;
+  color: #fff;
+  outline: none;
+  border: none;
+  text-indent: 10px;
+  font-size: 12px;
+}
+
+.searchWrap .searchIcon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 15px;
+}
+
+.main {
+  padding-top: 85px;
+}
+
+.menuBigWrap {
+  position: relative;
+}
+
+.menuWrap {
+  width: 90%;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menuWrap .content {
+  width: 100%;
+  display: flex;
+  padding: 0 0 0 20px;
+  margin-left: -10px;
+  font-size: 14px;
+}
+
+.menuWrap .content li {
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.menuWrap .content li:first-child {
+  width: 40px;
+}
+
+.menuWrap .content li:first-child.selected {
+  width: 60px;
+  font-size: 18px;
+}
+
+.menuWrap .content li.selected {
+  font-size: 18px;
+  width: 80px;
+}
+
+.menuBigWrap .menuIconWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 5%;
+  text-align: center;
+}
+
+.menuBigWrap .menuIconWrap .menuIcon {
+  width: 13px;
+  height: 11px;
+}
+
+.swiper-container {
+  position: relative;
+  width: 95%;
+  margin: 10px auto;
+}
+
+img.swiper-slide {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.adImg {
+  position: relative;
+  width: 95%;
+  margin: 10px auto;
+}
+
+.adImg img {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.mainMenuWrap {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  margin: 10px auto 0;
+}
+
+.mainMenuWrap .menuList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.mainMenuWrap .menuList img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mainMenuWrap .menuList div {
+  margin-top: 5px;
+}
+
+.articleWrap {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.articleList {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.articleList .left {
+  width: 70%;
+}
+
+.articleList .left .title {
+  width: 96%;
+  height: 52px;
+  line-height: 26px;
+  color: #000;
+  overflow: hidden;
+}
+
+.articleList .left .leftBottom {
+  display: flex;
+  align-items: center;
+  color: #fd4835;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.articleList .left .leftBottom .tag {
+  width: 24px;
+  height: 12px;
+  line-height: 12px;
+  background-color: #fd4835;
+  border-radius: 1px;
+  color: #fff;
+  padding: 0 2px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.articleList .left .leftBottom .commentNum,
+.articleList .left .leftBottom .date {
+  margin-left: 8px;
+  color: #848484;
+}
+
+.articleList .left .leftBottom .date {
+  width: 70px;
+  overflow: hidden;
+}
+
+.articleList .right {
+  width: 45%;
+  overflow: hidden;
+}
+
+.articleList .right img {
+  width: 100%;
+  /* height: 65px; */
+  vertical-align: middle;
+}
+
+.articleList .articleMenu {
+  box-sizing: border-box;
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  right: -330px;
+  padding: 10px 0;
+  background-color: #fd4835;
+  opacity: 0.89;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  transition: 1s;
+}
+
+.articleList .articleMenu.show {
+  right: -10px;
+}
+
+.articleList .articleMenu .middle {
+  padding: 5px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.articleList .articleMenu .middle .brandList {
+  width: 85px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.articleList .articleMenu .middle .brandList.selected {
+  background-color: #fff;
+  border-color: #fff;
+  color: #fd4835;
+}
+
+.articleList .articleMenu .bottom {
+  font-size: 12px;
+}
+
+.adImg .toDetail {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 56px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  opacity: 0.5;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+}
+
+.maskWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+.maskWrap .maskMenuWrap {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.maskWrap .maskMenuWrap .myMenuList {
+  position: relative;
+}
+
+.maskWrap .maskMenuWrap .myMenuList .delImg {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.maskWrap .maskMenuWrap .close img {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title {
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .titleText {
+  font-weight: bold;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .titleText span {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #999;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .editMenu {
+  width: 45px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #ff0000;
+  border-radius: 10px;
+  border: solid 1px #ff0000;
+  font-size: 14px;
+}
+
+.maskWrap .maskMenuWrap .myMenu .myMenuWrap {
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.maskWrap .maskMenuWrap .myMenu .myMenuWrap .myMenuList {
+  width: 75px;
+  height: 40px;
+  margin-top: 10px;
+  line-height: 40px;
+  margin-right: 12px;
+  text-align: center;
+  background-color: #f6f6f6;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #242424;
+}

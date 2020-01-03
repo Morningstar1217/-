@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的广告</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myAd.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="dataWrap flex_row">
+          <img src="./images/demo1.png" class="userImg" />
+          <div class="userInfo">
+            <div class="userName">胖墩</div>
+            <div class="isVipWrap flex_row">
+              <div class="isVip">您是尊贵VIP会员</div>
+              <a class="addAd" href="adText.html">添加广告</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="adWrap">
+          <div class="title">
+            跑马灯文字广告<span>（请勿超过17个汉字）</span>
+          </div>
+          <div class="adListWrap">
+            <div class="adList">
+              <div class="adText">
+                ① 宝妈传，打造宝妈传奇。
+              </div>
+              <div class="adConsole flex_row">
+                <div>删除</div>
+                <div>修改</div>
+                <div>已审核</div>
+              </div>
+            </div>
+            <div class="adList">
+              <div class="adText">
+                ② 宝妈传，打造宝妈传奇。
+              </div>
+              <div class="adConsole flex_row">
+                <div>删除</div>
+                <div>修改</div>
+                <div>已审核</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="adWrap">
+          <div class="title">
+            顶部图片广告位<span>（680*300像素最佳）</span>
+          </div>
+          <div class="adListWrap">
+            <div class="adList">
+              <div class="adImg">
+                <img src="./images/5de89a24a5f9a.jpg" />
+              </div>
+              <div class="adConsole flex_row">
+                <div>删除</div>
+                <div>修改</div>
+                <div>已审核</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="adWrap">
+          <div class="title">
+            底部图片广告位<span>（680*300像素最佳）</span>
+          </div>
+          <div class="adListWrap">
+            <div class="adList">
+              <div class="adImg">
+                <img src="./images/5de89a24a5f9a.jpg" />
+              </div>
+              <div class="adConsole flex_row">
+                <div>删除</div>
+                <div>修改</div>
+                <div>已审核</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {}
+      },
+      methods: {},
+      mounted() {}
+    })
+  </script>
+</html>

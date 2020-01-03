@@ -1,0 +1,121 @@
+body,
+html {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.header {
+  padding: 10px 0;
+}
+
+.header .adWrap {
+  width: 90%;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.header .adWrap .adList {
+  width: 33.33%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background-color: #fff;
+  border: solid 1px #ddd;
+}
+
+.header .adWrap .adList.selected {
+  background-color: #fd4835;
+  color: #fff;
+  border: 1px solid #fd4835;
+}
+
+.header .adWrap .adList:last-child {
+  border-left: none;
+}
+
+.header .adWrap .adList:nth-child(2) {
+  border-left: none;
+}
+
+.main .adTextWrap {
+  width: 95%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.main .adTextWrap .title {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.main .adTextWrap .textWrap textarea {
+  display: block;
+  margin: 10px auto 0;
+  resize: none;
+  outline: none;
+}
+
+.main .adTextWrap .updateImgWrap {
+  position: relative;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.main .adTextWrap .updateImgWrap img {
+  width: 54px;
+  height: 48px;
+  vertical-align: middle;
+}
+
+.main .adTextWrap .updateImgWrap div {
+  color: #282828;
+}
+
+.main .adTextWrap .updateImgWrap div span {
+  color: #afaeae;
+}
+
+.main .adTextWrap .updateImgWrap input {
+  width: 240px;
+  height: 48px;
+  position: absolute;
+  filter: opacity(0);
+}
+
+.main .saveBtn {
+  width: 99px;
+  height: 33px;
+  line-height: 33px;
+  margin: 20px auto;
+  text-align: center;
+  color: #fff;
+  background-color: #fd4835;
+  border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000;
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000;
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>个人微站</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myWeb.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="top">
+          <img src="./images/demo1.png" class="userImg" />
+          <div class="userInfo">
+            <div class="userName">胖墩</div>
+            <div class="telphone">电话：13100000000</div>
+            <div class="city">城市：荆州</div>
+            <div class="watch">+关注</div>
+            <img src="./images/ercode.png" class="ercode" @click="maskFlag = true" />
+          </div>
+        </div>
+        <div class="middle">
+          努力为了更好的明天，加油吧！
+        </div>
+        <div class="bottom">
+          <span>超赞:100</span>
+          <span>粉丝:100</span>
+          <span>文章:100</span>
+          <span>视频:100</span>
+        </div>
+        <div class="filterWrap"></div>
+      </div>
+      <div class="main">
+        <div class="menuWrap">
+          <div class="menuList" :class="menuIndex===0?'selected':''" @click="changeMenu(0)">
+            微站
+          </div>
+          <div class="menuList" :class="menuIndex===1?'selected':''" @click="changeMenu(1)">
+            宝贝
+          </div>
+          <div class="menuList" :class="menuIndex===2?'selected':''" @click="changeMenu(2)">
+            动态
+          </div>
+          <div class="menuList" :class="menuIndex===3?'selected':''" @click="changeMenu(3)">
+            视频
+          </div>
+        </div>
+        <!-- 微站 -->
+        <div class="menuContentWrap" v-if="menuIndex===0">
+          <div class="menuContentList" v-for="(item,index) in articleList">
+            <div class="left">
+              <div class="title">{{item.title}}<span class="joinStock">入库</span></div>
+              <div class="dataWrap">
+                <span class="date">{{item.date}}</span>
+                <img src="./images/watched.png" class="watchIcon" />
+                <span class="date">{{item.watchNum}}</span>
+                <img src="./images/like.png" class="likeIcon" />
+                <span class="date">{{item.likeNum}}</span>
+              </div>
+            </div>
+            <div class="right">
+              <img :src="item.imgUrl" />
+            </div>
+          </div>
+        </div>
+        <!-- 宝贝 -->
+        <div class="goodWrap flex_row" v-if="menuIndex===1">
+          <div class="goodList" v-for="(item,index) in goods">
+            <img :src="item.goodImg" />
+            <div class="goodTitle">{{item.title}}</div>
+            <div class="price">￥{{item.price}}</div>
+          </div>
+        </div>
+        <!-- 动态 -->
+        <div class="dynamicWrap" v-if="menuIndex===2">
+          <div class="dynamicList flex_row" v-for="(item,index) in dynamicList">
+            <div class="left">
+              <div class="dynamicDate">{{item.mouth}}月<span>{{item.day}}日</span></div>
+            </div>
+            <div class="right">
+              <div class="title">{{item.title}}</div>
+              <div class="dynamicInfo flex_row" v-if="item.imgUrl">
+                <img :src="item.imgUrl" />
+                <div class="goodInfo">
+                  <div class="goodName">{{item.goodTitle}}</div>
+                  <div class="price">￥{{item.price}}</div>
+                </div>
+              </div>
+              <div class="talkWrap" v-else>
+                <div class="talkContent">{{item.talkContent}}</div>
+                <div class="desc">{{item.desc}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 视频 -->
+        <div class="vedioWrap flex_row" v-if="menuIndex===3">
+          <div class="vedioList" v-for="(item,index) in vedioList">
+            <img :src="item.imgUrl" />
+            <div class="loveNum">
+              <img src="./images/love.png" />
+              {{item.loveNum}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+      <div class="mask" v-if="maskFlag">
+        <div class="content">
+          <img src="./images/pangdun_ercode.png" class="ercode" />
+          <img src="./images/close_ed.png" class="close" @click="maskFlag = false" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          articleList: [
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              date: '2019-06-10',
+              watchNum: 154,
+              likeNum: 100,
+              imgUrl: './images/5de89a24a5f9a.jpg'
+            },
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              date: '2019-06-10',
+              watchNum: 154,
+              likeNum: 100,
+              imgUrl: './images/5de89a24a5f9a.jpg'
+            },
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              date: '2019-06-10',
+              watchNum: 154,
+              likeNum: 100,
+              imgUrl: './images/5de89a24a5f9a.jpg'
+            }
+          ],
+          goods: [
+            {
+              title: '这里的风景真的好呀~',
+              goodImg: './images/demo1.png',
+              price: 19
+            },
+            {
+              title: '这里的风景真的好呀~',
+              goodImg: './images/demo1.png',
+              price: 19
+            },
+            {
+              title: '这里的风景真的好呀~',
+              goodImg: './images/demo1.png',
+              price: 19
+            }
+          ],
+          dynamicList: [
+            {
+              title: '上新了1个宝贝',
+              mouth: '12',
+              day: '02',
+              imgUrl: './images/demo1.png',
+              goodTitle: '宝贝宝贝宝贝宝贝宝贝宝贝宝贝宝贝宝贝',
+              price: 64
+            },
+            {
+              title: '收到1条评价',
+              mouth: '12',
+              day: '02',
+              talkContent: '顶下挺好的',
+              desc: '来自南京市的买家'
+            }
+          ],
+          vedioList: [
+            {
+              imgUrl: './images/demo1.png',
+              loveNum: '12W'
+            },
+            {
+              imgUrl: './images/demo1.png',
+              loveNum: '12W'
+            },
+            {
+              imgUrl: './images/demo1.png',
+              loveNum: '12W'
+            }
+          ],
+          menuIndex: 0,
+          maskFlag: false
+        }
+      },
+      methods: {
+        changeMenu(index) {
+          this.menuIndex = index
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

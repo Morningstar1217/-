@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宝妈传</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/joinVip.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="userImg">
+          <img src="./images/demo1.png" />
+        </div>
+        <div class="right">
+          <div class="userName">Simple</div>
+          <div class="vipLevel">您不是VIP会员</div>
+          <div class="vipLevel">成为VIP后享受全站功能</div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="title">
+          <img src="./images/joinVip/vip1.png" />
+          <div>VIP充值</div>
+        </div>
+        <div ref="menuWrap">
+          <div class="vipPriceWrap" ref="content">
+            <div class="vipPriceList" :class="priceIndex===0?'selected':''" @click="changePrice(0)">
+              <div class="vipTitle">连续包月</div>
+              <div class="vipPrice">￥<span>58</span></div>
+              <div class="vipText">到期自动续费可随时取消</div>
+            </div>
+            <div class="vipPriceList" :class="priceIndex===1?'selected':''" @click="changePrice(1)">
+              <div class="vipTitle">半年会员</div>
+              <div class="vipPrice">￥<span>299</span></div>
+              <div class="vipOldPrice">￥348</div>
+              <div class="saveMoney">立省49元</div>
+            </div>
+            <div class="vipPriceList" :class="priceIndex===2?'selected':''" @click="changePrice(2)">
+              <div class="vipTitle">一年会员</div>
+              <div class="vipPrice">￥<span>588</span></div>
+              <div class="vipOldPrice">￥696</div>
+              <div class="saveMoney">立省108元</div>
+            </div>
+            <div class="vipPriceList" :class="priceIndex===3?'selected':''" @click="changePrice(3)">
+              <div class="vipTitle">一年会员</div>
+              <div class="vipPrice">￥<span>588</span></div>
+              <div class="vipOldPrice">￥696</div>
+              <div class="saveMoney">立省108元</div>
+            </div>
+            <div class="vipPriceList" :class="priceIndex===4?'selected':''" @click="changePrice(4)">
+              <div class="vipTitle">一年会员</div>
+              <div class="vipPrice">￥<span>588</span></div>
+              <div class="vipOldPrice">￥696</div>
+              <div class="saveMoney">立省108元</div>
+            </div>
+          </div>
+        </div>
+        <div class="joinBtn">
+          立即加入
+        </div>
+        <div class="title">
+          <img src="./images/joinVip/vip2.png" />
+          <div>会员权益</div>
+        </div>
+        <div class="vipPower">
+          <div class="powerList" v-for="(item,index) in menuList">
+            <div class="powerListImg">
+              <img :src="item.imgUrl" />
+            </div>
+            <div class="powerTitleWrap">
+              <div>{{item.title}}</div>
+              <div class="desc">{{item.desc}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <img src="./images/joinVip/vip2.png" />
+          <div>会员使用说明</div>
+        </div>
+        <div class="vipHelp">
+          <div class="vipHepList" v-for="(item,index) in vipHelpList">
+            {{index+1}}、{{item.content}}
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          menuList: [
+            {
+              title: '文章采集',
+              desc: '热文采集&自主发布',
+              imgUrl: './images/joinVip/menu1.png'
+            },
+            {
+              title: '海报生成',
+              desc: '在线生成海报',
+              imgUrl: './images/joinVip/menu2.png'
+            },
+            {
+              title: '视频采集',
+              desc: '5G试戴短视频风口',
+              imgUrl: './images/joinVip/menu3.png'
+            },
+            {
+              title: '商品发布',
+              desc: '精彩个人主页售货',
+              imgUrl: './images/joinVip/menu4.png'
+            },
+            {
+              title: '谁看了我',
+              desc: '朋友圈谁对你文章或产品有兴趣',
+              imgUrl: './images/joinVip/menu5.png'
+            },
+            {
+              title: '在线客服',
+              desc: '无需添加微信即可在线聊天',
+              imgUrl: './images/joinVip/menu6.png'
+            },
+            {
+              title: '广告展位',
+              desc: '让你的广告悄无声息默默绽放',
+              imgUrl: './images/joinVip/menu7.png'
+            },
+            {
+              title: '雷达数据',
+              desc: '谁点开你的文章马上知道',
+              imgUrl: './images/joinVip/menu8.png'
+            }
+          ],
+          vipHelpList: [
+            {
+              content: '会员内容会员内容会员内容会员内容'
+            },
+            {
+              content: '会员内容会员内容会员内容会员内容'
+            },
+            {
+              content: '会员内容会员内容会员内容会员内容'
+            },
+            {
+              content: '会员内容会员内容会员内容会员内容'
+            }
+          ],
+          priceIndex: 0
+        }
+      },
+      methods: {
+        initPics() {
+          let itemWidth = 110 // 这里是设置列表每一项的宽度
+          let margin = 20
+          // width是整个列表的宽度
+          let width = (itemWidth + margin) * 5 - margin
+          this.$refs.content.style.width = width + 'px' // 设置.list的宽度的宽度
+          this.$nextTick(() => {
+            if (!this.picScroll) {
+              this.picScroll = new BScroll(this.$refs.menuWrap, {
+                scrollX: true,
+                eventPassthrough: 'vertical' // 忽略竖直方向的滚动
+              })
+            } else {
+              this.picScroll.refresh()
+            }
+          })
+        },
+        changePrice(index) {
+          this.priceIndex = index
+        }
+      },
+      mounted() {
+        this.$nextTick(() => {
+          this.initPics()
+        })
+      }
+    })
+  </script>
+</html>

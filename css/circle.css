@@ -1,0 +1,321 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+  background-color: #fff;
+}
+
+.header .searchWrap {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.searchWrap .searchInput {
+  width: 92%;
+  height: 26px;
+  margin: 10px 0;
+  background-color: #f2f2f2;
+  border-radius: 13px;
+  color: #000;
+  outline: none;
+  border: none;
+  text-indent: 10px;
+  font-size: 12px;
+}
+
+::-webkit-input-placeholder {
+  color: #000 !important;
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000 !important;
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000 !important;
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  color: #000 !important;
+  opacity: 0.5;
+}
+
+.searchWrap .searchIcon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 15px;
+}
+
+.menuBigWrap {
+  position: relative;
+}
+
+.menuWrap {
+  width: 90%;
+  color: #fd4835;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menuWrap .content {
+  width: 100%;
+  display: flex;
+  padding: 0 0 0 20px;
+  margin-left: -10px;
+  font-size: 14px;
+}
+
+.menuWrap .content li {
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.menuWrap .content li:first-child {
+  width: 40px;
+}
+
+.menuWrap .content li:first-child.selected {
+  width: 60px;
+  font-size: 18px;
+}
+
+.menuWrap .content li.selected {
+  font-size: 18px;
+  width: 80px;
+}
+
+.menuBigWrap .menuIconWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 5%;
+  text-align: center;
+}
+
+.menuBigWrap .menuIconWrap .menuIcon {
+  width: 13px;
+  height: 11px;
+}
+
+.main {
+  height: 100%;
+  background-color: #f2f2f2;
+  padding-top: 90px;
+}
+
+.adImg {
+  position: relative;
+  width: 95%;
+  max-height: 150px;
+  margin: 10px auto;
+}
+
+.adImg img {
+  width: 100%;
+  max-height: 150px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.contentWrap {
+  padding: 0 10px;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+}
+
+.contentWrap .contentList {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.contentWrap .contentList .circleImg {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.contentWrap .contentList .circleTitle {
+  box-sizing: border-box;
+  width: 173px;
+  height: 28px;
+  line-height: 18px;
+  font-size: 13px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.contentWrap .contentList .priceWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  margin: 0 auto;
+  border-bottom: 1px solid #d9d8d8;
+}
+
+.contentWrap .contentList .priceWrap .price {
+  font-size: 15px;
+  color: #fd4835;
+  font-weight: bold;
+}
+
+.contentWrap .contentList .priceWrap .likeNum {
+  font-size: 12px;
+  color: #868686;
+}
+
+.contentWrap .contentList .userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 11px;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.contentWrap .contentList .userInfo .userInfoWrap {
+  width: 78%;
+}
+
+.contentWrap .contentList .userInfo img {
+  width: 29px;
+  height: 29px;
+  border-radius: 3px;
+}
+
+.contentWrap .contentList .surePersonWrap {
+  color: #67adfb;
+}
+
+.contentWrap .contentList .surePersonWrap img {
+  width: 14px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.toRelease {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 200px;
+  width: 33px;
+  background-color: #fd4835;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+.toRelease img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.toRelease .slideText {
+  text-align: center;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.maskWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+.maskWrap .maskMenuWrap {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.maskWrap .maskMenuWrap .myMenuList {
+  position: relative;
+}
+
+.maskWrap .maskMenuWrap .myMenuList .delImg {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.maskWrap .maskMenuWrap .close img {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title {
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .titleText {
+  font-weight: bold;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .titleText span {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #999;
+}
+
+.maskWrap .maskMenuWrap .myMenu .title .editMenu {
+  width: 45px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #ff0000;
+  border-radius: 10px;
+  border: solid 1px #ff0000;
+  font-size: 14px;
+}
+
+.maskWrap .maskMenuWrap .myMenu .myMenuWrap {
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.maskWrap .maskMenuWrap .myMenu .myMenuWrap .myMenuList {
+  width: 75px;
+  height: 40px;
+  margin-top: 10px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 12px;
+  background-color: #f6f6f6;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #242424;
+}

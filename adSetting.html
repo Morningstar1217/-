@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>广告推送设置</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/adSetting.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="main">
+        <div class="title">我的广告设置</div>
+        <div class="settingWrap">
+          <div class="settingList" @click="changeSetting(0)">
+            <div class="settingListText">顶部有跑马灯广告</div>
+            <div class="settingImg">
+              <img
+                :src="settingFlag0?'./images/selected.png':'./images/noSelected.png'"
+              />
+            </div>
+          </div>
+          <div class="settingList" @click="changeSetting(1)">
+            <div class="settingListText">顶部图片广告</div>
+            <div class="settingImg">
+              <img
+                :src="settingFlag1?'./images/selected.png':'./images/noSelected.png'"
+              />
+            </div>
+          </div>
+          <div class="settingList" @click="changeSetting(2)">
+            <div class="settingListText">底部图片广告</div>
+            <div class="settingImg">
+              <img
+                :src="settingFlag2?'./images/selected.png':'./images/noSelected.png'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          settingFlag0: false,
+          settingFlag1: false,
+          settingFlag2: false
+        }
+      },
+      methods: {
+        changeSetting(index) {
+          switch (index) {
+            case 0:
+              this.settingFlag0 = !this.settingFlag0
+              break
+            case 1:
+              this.settingFlag1 = !this.settingFlag1
+              break
+            default:
+              this.settingFlag2 = !this.settingFlag2
+              break
+          }
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

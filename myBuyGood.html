@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我买到的</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myBuyGood.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="main">
+        <div class="goodWrap">
+          <div class="goodList" v-for="(item,index) in goodList">
+            <div class="goodDateWrap flex_row">
+              <div class="goodDate">{{item.date}}</div>
+              <div class="goodOrder">订单号:{{item.orderId}}</div>
+            </div>
+            <div class="goodInfo flex_row">
+              <img :src="item.goodImg" class="goodImg" />
+              <div class="goodInfoWrap">
+                <div class="goodName">{{item.goodName}}</div>
+                <div class="price">￥{{item.price}}</div>
+                <div class="watchNum">
+                  <img src="./images/success.png" />
+                  <span>{{item.status}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="goodConsole flex_row">
+              <div class="contactShop">
+                <img src="./images/contact.png" />
+                <span>联系卖家</span>
+              </div>
+              <div class="btnWrap flex_row">
+                <div class="toLogistics" v-if="item.status==='已发货'">
+                  查看物流
+                </div>
+                <div class="toEvaluation" v-if="item.status==='交易成功'">
+                  评价交易
+                </div>
+                <div class="toDetail">查看详情</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          goodList: [
+            {
+              id: 0,
+              goodImg: './images/demo1.png',
+              goodName: '三明治水果餐三明治水果餐',
+              price: 64,
+              watchNum: 1255,
+              date: '2019-12-10',
+              orderId: '46434343571156',
+              status: '待发货'
+            },
+            {
+              id: 1,
+              goodImg: './images/demo1.png',
+              goodName: '三明治水果餐三明治水果餐',
+              price: 64,
+              watchNum: 1255,
+              date: '2019-12-10',
+              orderId: '46434343571156',
+              status: '已发货'
+            },
+            {
+              id: 2,
+              goodImg: './images/demo1.png',
+              goodName: '三明治水果餐三明治水果餐',
+              price: 64,
+              watchNum: 1255,
+              date: '2019-12-10',
+              orderId: '46434343571156',
+              status: '待发货'
+            },
+            {
+              id: 3,
+              goodImg: './images/demo1.png',
+              goodName: '三明治水果餐三明治水果餐',
+              price: 64,
+              watchNum: 1255,
+              date: '2019-12-10',
+              orderId: '46434343571156',
+              status: '交易成功'
+            }
+          ]
+        }
+      },
+      methods: {},
+      mounted() {}
+    })
+  </script>
+</html>

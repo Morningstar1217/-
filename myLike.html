@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的点赞</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myLike.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="main">
+        <div
+          v-infinite-scroll="loadMore"
+          infinite-scroll-disabled="busy"
+          infinite-scroll-distance="10"
+        >
+          <div v-for="item in likes" class="likeList">
+            <div class="userImg">
+              <img :src="item.userImg" />
+            </div>
+            <div class="likeMiddle">
+              <div class="likeContent">
+                {{item.userName}}点赞了您的{{item.content}}
+              </div>
+              <div class="likeDate">{{item.date}}</div>
+            </div>
+            <div class="contentImgUrl">
+              <img :src="item.contentImgUrl" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          likes: [
+            {
+              userImg: './images/headImg.png',
+              date: '2019年12月5日  12:26',
+              content: '文章',
+              contentImgUrl: './images/contentImg.png',
+              userName: '胖墩'
+            },
+            {
+              userImg: './images/headImg.png',
+              date: '2019年12月7日  12:26',
+              content: '视频',
+              contentImgUrl: './images/contentImg.png',
+              userName: '胖墩'
+            },
+            {
+              userImg: './images/headImg.png',
+              date: '2019年12月5日  12:26',
+              content: '文章',
+              contentImgUrl: './images/contentImg.png',
+              userName: '胖墩'
+            },
+            {
+              userImg: './images/headImg.png',
+              date: '2019年12月5日  12:26',
+              content: '视频',
+              contentImgUrl: './images/contentImg.png',
+              userName: '胖墩'
+            },
+            {
+              userImg: './images/headImg.png',
+              date: '2019年12月5日  12:26',
+              content: '视频',
+              contentImgUrl: './images/contentImg.png',
+              userName: '胖墩'
+            }
+          ],
+          busy: false
+        }
+      },
+      methods: {
+        loadMore: function() {
+          this.busy = true
+          setTimeout(() => {
+            this.busy = false
+          }, 1000)
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

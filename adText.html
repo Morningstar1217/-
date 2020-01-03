@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>广告文字</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/adText.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="adWrap flex_row">
+          <div class="adList" :class="menuIndex===0?'selected':''" @click="changeMenu(0)">
+            跑马灯广告
+          </div>
+          <div class="adList" :class="menuIndex===1?'selected':''" @click="changeMenu(1)">
+            顶部图片广告
+          </div>
+          <div class="adList" :class="menuIndex===2?'selected':''" @click="changeMenu(2)">
+            底部图片广告
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="adTextWrap" v-if="menuIndex===0">
+          <div class="title">
+            广告文字
+          </div>
+          <div class="textWrap">
+            <textarea
+              cols="50"
+              rows="3"
+              placeholder="限17个汉字，34个字符"
+              maxlength="34"
+            ></textarea>
+          </div>
+        </div>
+        <div class="adTextWrap" v-if="menuIndex===1">
+          <div class="title">
+            顶部图片
+          </div>
+          <div class="updateImgWrap flex_row">
+            <img src="./images/updateImg.png" />
+            <div>上传图片<span>（建议680*300）</span></div>
+            <input type="file" id="topImg" />
+          </div>
+        </div>
+        <div class="adTextWrap" v-if="menuIndex===2">
+          <div class="title">
+            底部图片
+          </div>
+          <div class="updateImgWrap flex_row">
+            <img src="./images/updateImg.png" />
+            <div>上传图片<span>（建议680*300）</span></div>
+            <input type="file" id="bottomImg" />
+          </div>
+        </div>
+        <div class="saveBtn">提交保存</div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          menuIndex: 0
+        }
+      },
+      methods: {
+        changeMenu(index) {
+          this.menuIndex = index
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>

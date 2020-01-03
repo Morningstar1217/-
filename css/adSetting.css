@@ -1,0 +1,36 @@
+body,
+html {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.main .title {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  color: #878787;
+}
+
+.main .settingWrap {
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.main .settingWrap .settingList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.main .settingWrap .settingList .settingListText {
+  font-size: 13px;
+}
+
+.main .settingWrap .settingList .settingImg img {
+  width: 42px;
+  height: 24px;
+  vertical-align: middle;
+}

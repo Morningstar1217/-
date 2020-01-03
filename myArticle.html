@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宝妈传</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/myArticle.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="searchWrap">
+          <input
+            type="text"
+            placeholder="请输入关键词搜索"
+            class="searchInput"
+          />
+          <img src="./images/search_iconBlack.png" class="searchIcon" />
+        </div>
+      </div>
+      <div class="main">
+        <div class="articleWrap">
+          <div class="articleList" v-for="(item,index) in articleList">
+            <div class="articleContent flex_row">
+              <img :src="item.articleImg" class="articleImg" />
+              <div class="articleInfo">
+                <div class="title">{{item.title}}</div>
+                <div class="articleData flex_row">
+                  <div class="watchWrap flex_row">
+                    <img src="./images/watched.png" />
+                    <div class="watchNum">{{item.watchNum}}</div>
+                  </div>
+                  <div class="likeWrap flex_row">
+                    <img src="./images/like.png" />
+                    <div class="watchNum">{{item.likeNum}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="articleConsole flex_row">
+              <div class="consoleBtn">修改</div>
+              <div class="consoleBtn">删除</div>
+              <div class="consoleBtn">数据详情</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          articleList: [
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              articleImg: './images/5de89a24a5f9a.jpg',
+              likeNum: 134,
+              watchNum: 283
+            },
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              articleImg: './images/5de89a24a5f9a.jpg',
+              likeNum: 134,
+              watchNum: 283
+            },
+            {
+              title: '惯子如害子，九大惯子特征，家长必看家长必看家长必看',
+              articleImg: './images/5de89a24a5f9a.jpg',
+              likeNum: 134,
+              watchNum: 283
+            }
+          ]
+        }
+      },
+      methods: {},
+      mounted() {}
+    })
+  </script>
+</html>

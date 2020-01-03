@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的粉丝</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/collectGood.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="main">
+        <div
+          v-infinite-scroll="loadMore"
+          infinite-scroll-disabled="busy"
+          infinite-scroll-distance="10"
+          class="goodsWrap"
+        >
+          <div v-for="(item,index) in goods" class="likeList">
+            <div class="userImg">
+              <img :src="item.goodImg" />
+            </div>
+            <div class="likeMiddle">
+              <div class="likeContent">
+                {{item.goodTitle}}
+              </div>
+              <div class="likeDate">￥{{item.price}}</div>
+            </div>
+            <div class="contentImgUrl">
+              <img src="./images/loved.png" class="loved" @click="delGood(index)" />
+            </div>
+          </div>
+          <div class="noData" v-if="goods.length===0">暂无商品</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="navList" href="index.html">
+          <img src="./images/icon/index.png" class="navListIcon" />
+          <div class="navListText">首页</div>
+        </a>
+        <a class="navList" href="vedio.html">
+          <img src="./images/icon/video.png" class="navListIcon" />
+          <div class="navListText">视频</div>
+        </a>
+        <a class="navList" href="circle.html">
+          <img src="./images/icon/circle.png" class="navListIcon" />
+          <div class="navListText">圈子</div>
+        </a>
+        <a class="navList" href="message.html">
+          <img src="./images/icon/message.png" class="navListIcon" />
+          <div class="navListText">消息</div>
+        </a>
+        <a class="navList selected" href="user.html">
+          <img src="./images/icon/user_ed.png" class="navListIcon" />
+          <div class="navListText">我的</div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          goods: [
+            {
+              goodImg: './images/demo1.png',
+              goodTitle: '衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服',
+              price: 60
+            },
+            {
+              goodImg: './images/demo1.png',
+              goodTitle: '衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服',
+              price: 61
+            },
+            {
+              goodImg: './images/demo1.png',
+              goodTitle: '衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服',
+              price: 62
+            },
+            {
+              goodImg: './images/demo1.png',
+              goodTitle: '衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服',
+              price: 63
+            },
+            {
+              goodImg: './images/demo1.png',
+              goodTitle: '衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服',
+              price: 64
+            }
+          ],
+          busy: false
+        }
+      },
+      methods: {
+        loadMore: function() {
+          this.busy = true
+          setTimeout(() => {
+            this.busy = false
+          }, 1000)
+        },
+        delGood(index) {
+          this.goods.splice(index, 1)
+        }
+      },
+      mounted() {}
+    })
+  </script>
+</html>
