@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/vedio.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="header">
         <div class="menuList" :class="menuIndex===0?'selected':''" @click="changeMenu(0)">
           最新发布

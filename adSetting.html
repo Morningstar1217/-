@@ -2,42 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>广告推送设置</title>
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/adSetting.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="main">
         <div class="title">我的广告设置</div>
         <div class="settingWrap">
           <div class="settingList" @click="changeSetting(0)">
             <div class="settingListText">顶部有跑马灯广告</div>
             <div class="settingImg">
-              <img
-                :src="settingFlag0?'./images/selected.png':'./images/noSelected.png'"
-              />
+              <img :src="settingFlag0?'./images/selected.png':'./images/noSelected.png'" />
             </div>
           </div>
           <div class="settingList" @click="changeSetting(1)">
             <div class="settingListText">顶部图片广告</div>
             <div class="settingImg">
-              <img
-                :src="settingFlag1?'./images/selected.png':'./images/noSelected.png'"
-              />
+              <img :src="settingFlag1?'./images/selected.png':'./images/noSelected.png'" />
             </div>
           </div>
           <div class="settingList" @click="changeSetting(2)">
             <div class="settingListText">底部图片广告</div>
             <div class="settingImg">
-              <img
-                :src="settingFlag2?'./images/selected.png':'./images/noSelected.png'"
-              />
+              <img :src="settingFlag2?'./images/selected.png':'./images/noSelected.png'" />
             </div>
           </div>
         </div>

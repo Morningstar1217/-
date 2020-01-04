@@ -163,3 +163,7 @@ body {
 .mar_60top {
   margin-top: 60px !important;
 }
+
+[v-cloak] {
+  display: none;
+}

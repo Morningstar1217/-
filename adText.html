@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/adText.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="header">
         <div class="adWrap flex_row">
           <div class="adList" :class="menuIndex===0?'selected':''" @click="changeMenu(0)">
