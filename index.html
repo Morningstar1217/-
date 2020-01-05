@@ -18,7 +18,7 @@
         </div>
         <div class="menuBigWrap">
           <div class="menuWrap" ref="menuWrap">
-            <ul class="content" ref="content">
+            <ul class="content" ref="content" v-cloak>
               <li
                 v-for="(item,index) in menuList"
                 @click="changeMenu(index)"
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="main">
+      <div class="main" v-cloak>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <img src="./images/壁纸8.jpg" class="swiper-slide" />
@@ -163,7 +163,7 @@
           <div class="navListText">我的</div>
         </a>
       </div>
-      <div class="maskWrap" v-if="maskFlag">
+      <div class="maskWrap" v-if="maskFlag" v-cloak>
         <div class="maskMenuWrap">
           <div class="close" @click="maskFlag = false">
             <img src="./images/close.png" />
@@ -316,33 +316,42 @@
           selectedIndex: 0,
           myMenuList: [
             {
-              title: '女性'
+              title: '女性1',
+              id: 6
             },
             {
-              title: '女性'
+              title: '女性2',
+              id: 7
             },
             {
-              title: '女性'
+              title: '女性3',
+              id: 8
             },
             {
-              title: '女性'
+              title: '女性4',
+              id: 9
             },
             {
-              title: '女性'
+              title: '女性5',
+              id: 10
             }
           ],
           myseMenuList: [
             {
-              title: '女性'
+              title: '女性',
+              id: 6
             },
             {
-              title: '女性'
+              title: '女性2',
+              id: 7
             },
             {
-              title: '女性'
+              title: '女性3',
+              id: 8
             },
             {
-              title: '女性'
+              title: '女性4',
+              id: 9
             }
           ],
           delFlag: false,
@@ -437,7 +446,11 @@
         },
         addMenu(index) {
           if (this.delFlag) {
-            this.menuList.push(this.myMenuList[index])
+            let isHave = false
+            this.menuList.forEach(r => {
+              r.id === this.myMenuList[index].id ? (isHave = true) : ''
+            })
+            isHave ? '' : this.menuList.push(this.myMenuList[index])
           }
           this.initPics()
         },
