@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <!-- <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> -->
     <div id="app" v-cloak>
       <div class="header">
         <div class="searchWrap">
@@ -201,6 +213,7 @@
   <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script>
+    // setTimeout(() => {
     const app = new Vue({
       el: '#app',
       data() {
@@ -450,11 +463,15 @@
             this.menuList.forEach(r => {
               r.id === this.myMenuList[index].id ? (isHave = true) : ''
             })
-            isHave ? '' : this.menuList.push(this.myMenuList[index])
+            if (!isHave) {
+              this.menuList.push(this.myMenuList[index])
+              this.myMenuList.splice(index, 1)
+            }
           }
           this.initPics()
         },
         delMenu(index) {
+          this.myMenuList.push(this.menuList[index])
           this.menuList.splice(index, 1)
         }
       },
@@ -474,5 +491,6 @@
         })
       }
     })
+    // }, 1000)
   </script>
 </html>

@@ -8,6 +8,11 @@
   <title>文章详情</title>
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/aircleDetail.css" />
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -62,10 +67,10 @@
       <div class="adImg">
         <img src="./images/5de89a24a5f9a.jpg" />
         <div class="toDetail">换成我的</div>
-        <div class="slideMenu">
+        <!-- <div class="slideMenu">
           <img src="./images/slideMore.png" class="slideMore" @click="showFlag = !showFlag" />
           <img src="./images/slideWechat.png" class="slideWechat" @click="showErcode" />
-        </div>
+        </div> -->
       </div>
       <div class="readNum"><span>10000</span>阅读</div>
     </div>
@@ -147,9 +152,24 @@
         <div class="saveBtn">提交保存</div>
       </div>
     </div>
-    <div class="slideMenu2">
+
+    <!-- <div class="slideMenu2">
       <img src="./images/editArticle.png" class="editArticle" />
+    </div> -->
+    
+    <!-- s=新菜单 -->
+    <div class="newMenu closeNewMenu">
+      <div class="changeMy" >换成</br>我的</div>
+      <div class="editOnline" >在线</br>编辑</div>
+      <div class="navigation" >导航</br>菜单</div>
+      <div class="newMenuWrap">
+        <img src="./images/menu_new.png" class="newMenuImg">
+      </div>
     </div>
+    <!-- e=新菜单 -->
+
+
+
     <div class="mask" v-if="maskFlag">
       <div class="content" v-if="ercodeFlag">
         <img src="./images/pangdun_ercode.png" class="ercode" />
@@ -168,6 +188,7 @@
   </div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>
   const app = new Vue({
     el: '#app',
@@ -188,7 +209,8 @@
         collectFlag: false,
         likedFlag2: false,
         userFlex:false,
-        audioFlag:true//控制音频是否显示
+        audioFlag:true,//控制音频是否显示
+        newMenuFlag:false//控制新菜单是否展开
       }
     },
     methods: {
@@ -216,12 +238,23 @@
         }else{
           this.userFlex = false
         }
+      },
+      changeMenuShowOrClose(){
+        this.newMenuFlag = !this.newMenuFlag
       }
     },
     mounted() {
       window.addEventListener('scroll', this.handleScroll)
     }
   })
+</script>
+<script>
+  $(function(){
+    $('.newMenuWrap').click(function(){
+      $('.newMenu').toggleClass('showNewMenu')
+    })
+  })
+
 </script>
 
 </html>

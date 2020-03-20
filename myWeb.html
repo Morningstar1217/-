@@ -66,7 +66,7 @@
           </div>
         </div>
         <!-- 宝贝 -->
-        <div class="goodWrap flex_row" v-if="menuIndex===1">
+        <div class="goodWrap" v-if="menuIndex===1">
           <div class="goodList" v-for="(item,index) in goods">
             <img :src="item.goodImg" />
             <div class="goodTitle">{{item.title}}</div>
@@ -96,7 +96,7 @@
           </div>
         </div>
         <!-- 视频 -->
-        <div class="vedioWrap flex_row" v-if="menuIndex===3">
+        <div class="vedioWrap" v-if="menuIndex===3">
           <div class="vedioList" v-for="(item,index) in vedioList">
             <img :src="item.imgUrl" />
             <div class="loveNum">
@@ -173,12 +173,17 @@
             },
             {
               title: '这里的风景真的好呀~',
-              goodImg: './images/demo1.png',
+              goodImg: './images/demo3.png',
               price: 19
             },
             {
               title: '这里的风景真的好呀~',
-              goodImg: './images/demo1.png',
+              goodImg: './images/demo2.png',
+              price: 19
+            },
+            {
+              title: '这里的风景真的好呀~',
+              goodImg: './images/demo2.png',
               price: 19
             }
           ],
@@ -205,13 +210,17 @@
               loveNum: '12W'
             },
             {
-              imgUrl: './images/demo1.png',
+              imgUrl: './images/demo3.png',
               loveNum: '12W'
             },
             {
-              imgUrl: './images/demo1.png',
+              imgUrl: './images/demo2.png',
               loveNum: '12W'
-            }
+            },
+            {
+              imgUrl: './images/demo3.png',
+              loveNum: '12W'
+            },
           ],
           menuIndex: 0,
           maskFlag: false
