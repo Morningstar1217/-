@@ -66,8 +66,15 @@
           </div>
         </div>
         <!-- 宝贝 -->
-        <div class="goodWrap" v-if="menuIndex===1">
+        <div class="goodWrap" v-if="menuIndex===1&&goods.length>2">
           <div class="goodList" v-for="(item,index) in goods">
+            <img :src="item.goodImg" />
+            <div class="goodTitle">{{item.title}}</div>
+            <div class="price">￥{{item.price}}</div>
+          </div>
+        </div>
+        <div class="goodWrapSmall flex_row" v-if="menuIndex===1&&goods.length<=2">
+          <div class="goodListSmall" v-for="(item,index) in goods">
             <img :src="item.goodImg" />
             <div class="goodTitle">{{item.title}}</div>
             <div class="price">￥{{item.price}}</div>
@@ -96,8 +103,17 @@
           </div>
         </div>
         <!-- 视频 -->
-        <div class="vedioWrap" v-if="menuIndex===3">
+        <div class="vedioWrap" v-if="menuIndex===3&&vedioList.length>2">
           <div class="vedioList" v-for="(item,index) in vedioList">
+            <img :src="item.imgUrl" />
+            <div class="loveNum">
+              <img src="./images/love.png" />
+              {{item.loveNum}}
+            </div>
+          </div>
+        </div>
+        <div class="vedioWrapSmall  flex_row" v-if="menuIndex===3&&vedioList.length<=2">
+          <div class="vedioListSmall" v-for="(item,index) in vedioList">
             <img :src="item.imgUrl" />
             <div class="loveNum">
               <img src="./images/love.png" />
@@ -168,7 +184,7 @@
           goods: [
             {
               title: '这里的风景真的好呀~',
-              goodImg: './images/demo1.png',
+              goodImg: './images/demo2.png',
               price: 19
             },
             {
@@ -178,7 +194,7 @@
             },
             {
               title: '这里的风景真的好呀~',
-              goodImg: './images/demo2.png',
+              goodImg: './images/demo3.png',
               price: 19
             },
             {
@@ -220,7 +236,7 @@
             {
               imgUrl: './images/demo3.png',
               loveNum: '12W'
-            },
+            }
           ],
           menuIndex: 0,
           maskFlag: false

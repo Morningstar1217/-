@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>个人信息</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/myInfo.css" />
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="container">
+                <div class="imgWrap">
+                    <div class="imgList">
+                        <div class="imgTitle">头像</div>
+                        <img src="./images/headImg.png" class="headImg" />
+                        <img src="./images/arrowRight.png" class="arrowRight" />
+                    </div>
+                    <div class="imgList ercodeList">
+                        <div class="imgTitle">微信二维码</div>
+                        <div class="ercodeImgWrap">
+                            <img src="./images/pangdun_ercode.png" class="headImg" />
+                            <div class="ercodeReset">恢复默认</div>
+                        </div>
+                        <img src="./images/arrowRight.png" class="arrowRight" />
+                    </div>
+                </div>
+                <div class="infoWrap">
+                    <div class="infoList">
+                        <div class="title">姓名</div>
+                        <input type="text" class="inp" placeholder="(8个汉字，16个英文字母)" />
+                    </div>
+                    <div class="infoList">
+                        <div class="title">城市</div>
+                        <input type="text" class="inp" placeholder="请输入城市名" />
+                    </div>
+                    <div class="infoList">
+                        <div class="title">公司</div>
+                        <input type="text" class="inp" placeholder="请输入公司名" />
+                    </div>
+                    <div class="infoList">
+                        <div class="title">手机</div>
+                        <input type="text" class="inp" placeholder="请输入手机号" />
+                    </div>
+                    <div class="infoList">
+                        <div class="title">QQ</div>
+                        <input type="text" class="inp" placeholder="请输入QQ号" />
+                    </div>
+                </div>
+                <div class="addWrap">
+                    <div class="addressTitle">定位</div>
+                    <div class="getAddress">获取位置</div>
+                </div>
+                <div class="introWrap">
+                    <div class="introTitle">自我介绍</div>
+                    <textarea class="introInp" placeholder="请输入自我介绍"></textarea>
+                </div>
+                <div class="submitBtn">
+                    提交保存
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {}
+            },
+            methods: {},
+        })
+    </script>
+</html>

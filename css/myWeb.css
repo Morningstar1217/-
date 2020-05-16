@@ -193,13 +193,42 @@
   background-color: #fff;
 }
 
+.main .goodWrapSmall,
+.main .vedioWrapSmall {
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  padding: 0 10px;
+}
+
+.main .goodListSmall,
+.main .vedioListSmall {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.main .goodListSmall:first-child,
+.main .vedioListSmall:first-child {
+  margin-right: 10px;
+}
+
 .main .goodWrap .goodList img,
-.main .vedioWrap .vedioList > img {
+.main .vedioWrap .vedioList > img,
+.main .goodWrapSmall .goodListSmall > img,
+.main .vedioWrapSmall .vedioListSmall > img {
   width: 100%;
   vertical-align: middle;
 }
 
-.main .goodWrap .goodList .goodTitle {
+.main .goodWrap .goodList .goodTitle,
+.main .goodWrapSmall .goodListSmall .goodTitle {
   padding: 0 10px;
   height: 30px;
   line-height: 30px;
@@ -208,7 +237,8 @@
   overflow: hidden;
 }
 
-.main .goodWrap .goodList .price {
+.main .goodWrap .goodList .price,
+.main .goodWrapSmall .goodListSmall .price {
   padding: 0 10px;
   height: 30px;
   line-height: 30px;
@@ -305,12 +335,14 @@
   color: #414040;
 }
 
-.main .vedioWrap .vedioList {
+.main .vedioWrap .vedioList,
+.main .vedioListSmall {
   position: relative;
   overflow: hidden;
 }
 
-.main .vedioWrap .vedioList .loveNum {
+.main .vedioWrap .vedioList .loveNum,
+.main .vedioWrapSmall .vedioListSmall .loveNum {
   position: absolute;
   bottom: 4px;
   left: 4px;
@@ -318,7 +350,8 @@
   font-size: 12px;
 }
 
-.main .vedioWrap .vedioList .loveNum img {
+.main .vedioWrap .vedioList .loveNum img,
+.main .vedioWrapSmall .vedioListSmall .loveNum img {
   width: 15px;
   height: 15px;
   vertical-align: middle;
