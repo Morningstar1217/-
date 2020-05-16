@@ -133,6 +133,14 @@
                     </div>
                 </div>
             </div>
+            <!-- 海报 -->
+            <div class="poster-wrap">
+                <div class="poster-content">
+                    <!-- <img src="./images/poster.png" class="poster" /> -->
+                    <button class="close-btn"></button>
+                    <button class="joinVIP"></button>
+                </div>
+            </div>
         </div>
     </body>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -140,6 +148,12 @@
         $(function () {
             $('.menuList').click(function () {
                 $(this).addClass('selected').siblings().removeClass('selected')
+            })
+            $('.close-btn').click(function () {
+                $('.poster-wrap').hide()
+            })
+            $('.joinVIP').click(function(){
+                console.log('join vip')
             })
         })
     </script>

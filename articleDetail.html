@@ -159,9 +159,23 @@
     
     <!-- s=新菜单 -->
     <div class="newMenu closeNewMenu">
-      <div class="changeMy" >换成</br>我的</div>
-      <div class="editOnline" >在线</br>编辑</div>
-      <div class="navigation" >导航</br>菜单</div>
+      <div class="editOnline" >
+        <img src="./images/edit3.png"  class="menuImg"> 
+        <div>在线编辑</div>
+    </div>
+      <div class="navigation" >
+        <img src="./images/shop.png"  class="menuImg"> 
+        <div>我的微站</div>
+      </div>
+      <div class="navigation" >
+        <img src="./images/menuIcon.png"  class="menuImg"> 
+        <div>导航菜单</div>
+      </div>
+      <div class="navigation" >
+        <img src="./images/shopHome.png"  class="menuImg"> 
+        <div>我的商城</div>
+      </div>
+      <div class="line"></div>
       <div class="newMenuWrap">
         <img src="./images/menu_new.png" class="newMenuImg">
       </div>
@@ -252,6 +266,8 @@
   $(function(){
     $('.newMenuWrap').click(function(){
       $('.newMenu').toggleClass('showNewMenu')
+      $('.line').toggle()
+      $('.newMenuWrap img').attr('src')==='./images/top.png'?$('.newMenuWrap img').attr({'src':'./images/menu_new.png','style':'width: 19px;height: 19px;'}):$('.newMenuWrap img').attr({'src':'./images/top.png','style':'width:12px;height:9px'})
     })
   })
 
